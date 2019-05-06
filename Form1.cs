@@ -14,5 +14,16 @@ namespace Plan_and_Program {
 			InitializeComponent();
 
 			}
-		}
+
+        private void PizzaButton_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 	}
