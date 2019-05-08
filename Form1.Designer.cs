@@ -145,12 +145,15 @@
             // 
             this.pizzaChoice.FormattingEnabled = true;
             this.pizzaChoice.Items.AddRange(new object[] {
-            "Ham & Cheese",
             "Cheese",
+            "Double Cheese",
+            "Hawaiian",
+            "Meatlovers",
             "Pepperoni",
             "Chicken",
-            "Garlic",
-            "Hawaiian"});
+            "Garlic Bread",
+            "Fries",
+            "Large Drink"});
             this.pizzaChoice.Location = new System.Drawing.Point(59, 13);
             this.pizzaChoice.Name = "pizzaChoice";
             this.pizzaChoice.Size = new System.Drawing.Size(89, 21);
