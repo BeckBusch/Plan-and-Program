@@ -122,6 +122,7 @@
             this.detailsButton.TabIndex = 7;
             this.detailsButton.Text = "Submit Details";
             this.detailsButton.UseVisualStyleBackColor = true;
+            this.detailsButton.Click += new System.EventHandler(this.DetailsButton_Click);
             // 
             // deliveryBox
             // 
@@ -135,6 +136,7 @@
             // 
             // detailsBox
             // 
+            this.detailsBox.Enabled = false;
             this.detailsBox.Location = new System.Drawing.Point(218, 12);
             this.detailsBox.Multiline = true;
             this.detailsBox.Name = "detailsBox";
@@ -221,6 +223,7 @@
             // 
             // pizzaBox
             // 
+            this.pizzaBox.Enabled = false;
             this.pizzaBox.Location = new System.Drawing.Point(218, 165);
             this.pizzaBox.Multiline = true;
             this.pizzaBox.Name = "pizzaBox";
@@ -229,6 +232,7 @@
             // 
             // summaryBox
             // 
+            this.summaryBox.Enabled = false;
             this.summaryBox.Location = new System.Drawing.Point(12, 342);
             this.summaryBox.Multiline = true;
             this.summaryBox.Name = "summaryBox";
