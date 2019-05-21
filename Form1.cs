@@ -11,35 +11,26 @@ using System.IO;
 
 namespace Plan_and_Program {
 	public partial class Form1: Form {
-        //create dictionary for order. string is name of item, decimal is quantity
-        Dictionary<string, decimal> order = new Dictionary<string, decimal>();
-        //array to store customer details. only 4 values so array used instead of dict
-        string[] details = new string[4];
-        //path variable to point to save file
-        string path = @"C:\Users\beckb\source\repos\Plan and Program\";
+        //create multidimensional array for order.
+        //data is menu item and quantity so 2 values. 9 different menu items so array is 9, 2
+        string[,] order = new string[9, 2];
 		public Form1() {
 			InitializeComponent();
-            //Fills out text boxes with data from files
-            detailsBox.Text = File.ReadAllText(path + "Details.txt");
-            pizzaBox.Text = File.ReadAllText(path + "PizzaOrder.txt");
+         
 			}
         private void PizzaButton_Click(object sender, EventArgs e)
         {
-            decimal tmp = 0;
-            if(order.TryGetValue(pizzaChoice.Text, out tmp)) {
-                order[pizzaChoice.Text] = pizzaCombo.Value;
-            }
-            else
+            //attempt as assiging value
+            //order[0, 0] = pizzaChoice.Text;
+
+            //array very hard to iterate over
+            for(int i =0; i < 9; i++)
             {
-                order.Add(pizzaChoice.Text, pizzaCombo.Value);
-            }
-            pizzaBox.Clear();
-            File.WriteAllText(path + "PizzaOrder.txt", "Last Order:\r\n");
-            foreach (KeyValuePair<string, decimal> entry in order)
-            {
-                if(entry.Value != 0) {
-                    pizzaBox.Text += (entry.Key + ": x" + entry.Value.ToString() + "\r\n");
-                    File.AppendAllText(path + "PizzaOrder.txt", (entry.Key + ": x" + entry.Value.ToString() + "\r\n"));
+                //hard to check value
+                if (order[i, 0] == pizzaChoice.Text)
+                {
+                    //have to convert value to string cbecause array can only have one value
+                    order[i, 1] = pizzaCombo.Value.ToString;
                 }
             }
         }
@@ -51,7 +42,6 @@ namespace Plan_and_Program {
 
         private void DetailsButton_Click(object sender, EventArgs e)
         {
-            order[0] = nameBox.Text;
         }
     }
 	}
