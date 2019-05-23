@@ -38,10 +38,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pizzaCombo = new System.Windows.Forms.NumericUpDown();
             this.Order = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.orderButton = new System.Windows.Forms.Button();
             this.pizzaButton = new System.Windows.Forms.Button();
             this.pizzaBox = new System.Windows.Forms.TextBox();
-            this.summaryBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pizzaCombo)).BeginInit();
@@ -136,11 +137,12 @@
             // 
             // detailsBox
             // 
+            this.detailsBox.BackColor = System.Drawing.Color.White;
             this.detailsBox.Enabled = false;
-            this.detailsBox.Location = new System.Drawing.Point(218, 12);
+            this.detailsBox.Location = new System.Drawing.Point(12, 178);
             this.detailsBox.Multiline = true;
             this.detailsBox.Name = "detailsBox";
-            this.detailsBox.Size = new System.Drawing.Size(204, 147);
+            this.detailsBox.Size = new System.Drawing.Size(200, 137);
             this.detailsBox.TabIndex = 5;
             // 
             // pizzaChoice
@@ -188,22 +190,32 @@
             // 
             // Order
             // 
+            this.Order.Controls.Add(this.button1);
             this.Order.Controls.Add(this.orderButton);
             this.Order.Controls.Add(this.pizzaButton);
             this.Order.Controls.Add(this.label5);
             this.Order.Controls.Add(this.pizzaCombo);
             this.Order.Controls.Add(this.pizzaChoice);
             this.Order.Controls.Add(this.label6);
-            this.Order.Location = new System.Drawing.Point(12, 165);
+            this.Order.Location = new System.Drawing.Point(218, 12);
             this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(200, 99);
+            this.Order.Size = new System.Drawing.Size(200, 127);
             this.Order.TabIndex = 10;
             this.Order.TabStop = false;
             this.Order.Text = "Order";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(101, 65);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 25);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Delete Item";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // orderButton
             // 
-            this.orderButton.Location = new System.Drawing.Point(105, 66);
+            this.orderButton.Location = new System.Drawing.Point(101, 96);
             this.orderButton.Name = "orderButton";
             this.orderButton.Size = new System.Drawing.Size(89, 25);
             this.orderButton.TabIndex = 10;
@@ -217,32 +229,33 @@
             this.pizzaButton.Name = "pizzaButton";
             this.pizzaButton.Size = new System.Drawing.Size(89, 25);
             this.pizzaButton.TabIndex = 8;
-            this.pizzaButton.Text = "Add Pizza";
+            this.pizzaButton.Text = "Add Item";
             this.pizzaButton.UseVisualStyleBackColor = true;
             this.pizzaButton.Click += new System.EventHandler(this.PizzaButton_Click);
             // 
             // pizzaBox
             // 
+            this.pizzaBox.BackColor = System.Drawing.Color.White;
             this.pizzaBox.Enabled = false;
-            this.pizzaBox.Location = new System.Drawing.Point(218, 165);
+            this.pizzaBox.Location = new System.Drawing.Point(218, 158);
             this.pizzaBox.Multiline = true;
             this.pizzaBox.Name = "pizzaBox";
-            this.pizzaBox.Size = new System.Drawing.Size(204, 171);
+            this.pizzaBox.Size = new System.Drawing.Size(200, 157);
             this.pizzaBox.TabIndex = 11;
             // 
-            // summaryBox
+            // label4
             // 
-            this.summaryBox.Enabled = false;
-            this.summaryBox.Location = new System.Drawing.Point(12, 342);
-            this.summaryBox.Multiline = true;
-            this.summaryBox.Name = "summaryBox";
-            this.summaryBox.Size = new System.Drawing.Size(410, 207);
-            this.summaryBox.TabIndex = 12;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 162);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Details:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 326);
+            this.label7.Location = new System.Drawing.Point(215, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 13;
@@ -252,9 +265,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 561);
+            this.ClientSize = new System.Drawing.Size(427, 325);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.summaryBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pizzaBox);
             this.Controls.Add(this.Order);
             this.Controls.Add(this.detailsBox);
@@ -291,7 +304,8 @@
         private System.Windows.Forms.Button detailsButton;
         private System.Windows.Forms.Button orderButton;
         private System.Windows.Forms.Button pizzaButton;
-        private System.Windows.Forms.TextBox summaryBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
     }
 	}
