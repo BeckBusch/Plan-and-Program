@@ -38,8 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pizzaCombo = new System.Windows.Forms.NumericUpDown();
             this.Order = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.orderButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.pizzaButton = new System.Windows.Forms.Button();
             this.pizzaBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -147,6 +146,7 @@
             // 
             // pizzaChoice
             // 
+            this.pizzaChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.pizzaChoice.FormattingEnabled = true;
             this.pizzaChoice.Items.AddRange(new object[] {
             "Cheese",
@@ -190,8 +190,7 @@
             // 
             // Order
             // 
-            this.Order.Controls.Add(this.button1);
-            this.Order.Controls.Add(this.orderButton);
+            this.Order.Controls.Add(this.deleteButton);
             this.Order.Controls.Add(this.pizzaButton);
             this.Order.Controls.Add(this.label5);
             this.Order.Controls.Add(this.pizzaCombo);
@@ -199,29 +198,20 @@
             this.Order.Controls.Add(this.label6);
             this.Order.Location = new System.Drawing.Point(218, 12);
             this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(200, 127);
+            this.Order.Size = new System.Drawing.Size(200, 97);
             this.Order.TabIndex = 10;
             this.Order.TabStop = false;
             this.Order.Text = "Order";
             // 
-            // button1
+            // deleteButton
             // 
-            this.button1.Location = new System.Drawing.Point(101, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 25);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Delete Item";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // orderButton
-            // 
-            this.orderButton.Location = new System.Drawing.Point(101, 96);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(89, 25);
-            this.orderButton.TabIndex = 10;
-            this.orderButton.Text = "Submit Order";
-            this.orderButton.UseVisualStyleBackColor = true;
-            this.orderButton.Click += new System.EventHandler(this.OrderButton_Click);
+            this.deleteButton.Location = new System.Drawing.Point(101, 65);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(89, 25);
+            this.deleteButton.TabIndex = 11;
+            this.deleteButton.Text = "Delete Item";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // pizzaButton
             // 
@@ -237,10 +227,10 @@
             // 
             this.pizzaBox.BackColor = System.Drawing.Color.White;
             this.pizzaBox.Enabled = false;
-            this.pizzaBox.Location = new System.Drawing.Point(218, 158);
+            this.pizzaBox.Location = new System.Drawing.Point(218, 128);
             this.pizzaBox.Multiline = true;
             this.pizzaBox.Name = "pizzaBox";
-            this.pizzaBox.Size = new System.Drawing.Size(200, 157);
+            this.pizzaBox.Size = new System.Drawing.Size(200, 187);
             this.pizzaBox.TabIndex = 11;
             // 
             // label4
@@ -255,7 +245,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(215, 142);
+            this.label7.Location = new System.Drawing.Point(218, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 13;
@@ -302,9 +292,8 @@
         private System.Windows.Forms.GroupBox Order;
         private System.Windows.Forms.TextBox pizzaBox;
         private System.Windows.Forms.Button detailsButton;
-        private System.Windows.Forms.Button orderButton;
         private System.Windows.Forms.Button pizzaButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
     }

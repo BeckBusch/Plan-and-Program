@@ -1,13 +1,4 @@
 Last Order:
-Cheese: x1
-Double Cheese: x1
-Hawaiian: x1
-Meatlovers: x1
-Pepperoni: x1
-Chicken: x1
-Garlic Bread: x1
-Fries: x1
-Large Drink: x1
-Friesf: x1
-Friesfd: x1
-d: x1
+Cheese: x1 $2.5
+Hawaiian: x2 $5.0
+Large Drink: x1 $2.5

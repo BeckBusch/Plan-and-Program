@@ -17,7 +17,45 @@ namespace Plan_and_Program {
         string[] details = new string[4];
         //path variable to point to save file
         string path = @"C:\Users\beckb\source\repos\Plan and Program\";
-		public Form1() {
+        //integer for saving total cost of order
+        decimal price = 0;
+        //dictionary to hold all costs
+        Dictionary<string, decimal> prices = new Dictionary<string, decimal>() {
+            {"Cheese", 2.5m},
+            {"Double Cheese", 2.5m},
+            {"Hawaiian", 2.5m},
+            {"Meatlovers", 2.5m},
+            {"Pepperoni", 2.5m},
+            {"Chicken", 2.5m},
+            {"Garlic Bread", 2.5m},
+            {"Fries", 2.5m},
+            {"Large Drink", 2.5m}
+        };
+        private void PizzaUpdate()
+        {
+            pizzaBox.Clear();
+            price = 0;
+            File.WriteAllText(path + "PizzaOrder.txt", "Last Order:\r\n");
+            foreach (KeyValuePair<string, decimal> entry in order)
+            {
+                if (entry.Value != 0)
+                {
+                    string tempStr = entry.Key + ": x" + entry.Value.ToString() + " $" + (prices[entry.Key] * entry.Value).ToString() + "\r\n";
+                    pizzaBox.Text += tempStr;
+                    File.AppendAllText(path + "PizzaOrder.txt", tempStr);
+                    price += prices[entry.Key] * entry.Value;
+                }
+            }
+            if (details[3] == "True")
+            {
+                pizzaBox.Text += "Delivery Cost: $4.50\r\n";
+                price += 4.50m;
+            }
+            pizzaBox.Text += "Total Cost: $" + price.ToString();
+
+        }
+
+        public Form1() {
 			InitializeComponent();
             //Fills out text boxes with data from files
             detailsBox.Text = File.ReadAllText(path + "Details.txt");
@@ -33,21 +71,7 @@ namespace Plan_and_Program {
             {
                 order.Add(pizzaChoice.Text, pizzaCombo.Value);
             }
-            pizzaBox.Clear();
-            File.WriteAllText(path + "PizzaOrder.txt", "Last Order:\r\n");
-            foreach (KeyValuePair<string, decimal> entry in order)
-            {
-                if(entry.Value != 0) {
-                    pizzaBox.Text += (entry.Key + ": x" + entry.Value.ToString() + "\r\n");
-                    File.AppendAllText(path + "PizzaOrder.txt", (entry.Key + ": x" + entry.Value.ToString() + "\r\n"));
-                }
-            }
-
-        }
-
-        private void OrderButton_Click(object sender, EventArgs e)
-        {
-
+            PizzaUpdate();
         }
 
         private void DetailsButton_Click(object sender, EventArgs e)
@@ -58,6 +82,16 @@ namespace Plan_and_Program {
             details[3] = deliveryBox.Checked.ToString();
             detailsBox.Lines = details;
             File.WriteAllLines(path + "Details.txt", details);
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            decimal tmp = 0;
+            if (order.TryGetValue(pizzaChoice.Text, out tmp))
+            {
+                order[pizzaChoice.Text] = 0;
+            }
+            PizzaUpdate();
         }
     }
 	}
