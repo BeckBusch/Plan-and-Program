@@ -19,6 +19,7 @@ namespace Plan_and_Program {
         string[] details = new string[4];
         //path variable to point to save file
         string path = @"C:\Users\beckb\source\repos\Plan and Program\";
+<<<<<<< HEAD
         //integer for saving total cost of order
         decimal price = 0;
         //dictionary to hold all costs
@@ -58,6 +59,9 @@ namespace Plan_and_Program {
         }
 
         public Form1() {
+=======
+		public Form1() {
+>>>>>>> parent of 859e09d... added price calc
 			InitializeComponent();
           
          
@@ -75,7 +79,21 @@ namespace Plan_and_Program {
             {
                 order.Add(pizzaChoice.Text, pizzaCombo.Value);
             }
-            PizzaUpdate();
+            pizzaBox.Clear();
+            File.WriteAllText(path + "PizzaOrder.txt", "Last Order:\r\n");
+            foreach (KeyValuePair<string, decimal> entry in order)
+            {
+                if(entry.Value != 0) {
+                    pizzaBox.Text += (entry.Key + ": x" + entry.Value.ToString() + "\r\n");
+                    File.AppendAllText(path + "PizzaOrder.txt", (entry.Key + ": x" + entry.Value.ToString() + "\r\n"));
+                }
+            }
+
+        }
+
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void DetailsButton_Click(object sender, EventArgs e)
@@ -87,6 +105,7 @@ namespace Plan_and_Program {
             detailsBox.Lines = details;
             File.WriteAllLines(path + "Details.txt", details);
         }
+<<<<<<< HEAD
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
@@ -98,5 +117,7 @@ namespace Plan_and_Program {
             PizzaUpdate();
         }
        
+=======
+>>>>>>> parent of 859e09d... added price calc
     }
 	}
