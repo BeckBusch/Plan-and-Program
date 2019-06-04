@@ -8,9 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Plan_and_Program {
-	public partial class Form1: Form {
+	public partial class Form1: MaterialForm {
         //create dictionary for order. string is name of item, decimal is quantity
         Dictionary<string, decimal> order = new Dictionary<string, decimal>();
         //array to store customer details. only 4 values so array used instead of dict
@@ -48,7 +50,7 @@ namespace Plan_and_Program {
             }
             if (details[3] == "True")
             {
-                pizzaBox.Text += "Delivery Cost: $4.50\r\n";
+                pizzaBox.Text += "--------\r\nDelivery Cost: $4.50\r\n";
                 price += 4.50m;
             }
             pizzaBox.Text += "Total Cost: $" + price.ToString();
@@ -57,6 +59,8 @@ namespace Plan_and_Program {
 
         public Form1() {
 			InitializeComponent();
+          
+         
             //Fills out text boxes with data from files
             detailsBox.Text = File.ReadAllText(path + "Details.txt");
             pizzaBox.Text = File.ReadAllText(path + "PizzaOrder.txt");
@@ -93,5 +97,6 @@ namespace Plan_and_Program {
             }
             PizzaUpdate();
         }
+       
     }
 	}
