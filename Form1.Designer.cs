@@ -237,7 +237,11 @@
             this.pizzaBox.Enabled = false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.pizzaBox.Location = new System.Drawing.Point(256, 239);
+=======
+            this.pizzaBox.Location = new System.Drawing.Point(218, 158);
+>>>>>>> parent of 859e09d... added price calc
 =======
             this.pizzaBox.Location = new System.Drawing.Point(218, 158);
 >>>>>>> parent of 859e09d... added price calc
@@ -313,8 +317,11 @@
         private System.Windows.Forms.Button pizzaButton;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.Button deleteButton;
 =======
+=======
+>>>>>>> parent of 859e09d... added price calc
 =======
 >>>>>>> parent of 859e09d... added price calc
         private System.Windows.Forms.Button button1;
