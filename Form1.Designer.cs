@@ -235,45 +235,12 @@
             // 
             this.pizzaBox.BackColor = System.Drawing.Color.White;
             this.pizzaBox.Enabled = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.pizzaBox.Location = new System.Drawing.Point(256, 239);
-=======
-            this.pizzaBox.Location = new System.Drawing.Point(218, 158);
->>>>>>> parent of 859e09d... added price calc
-=======
-            this.pizzaBox.Location = new System.Drawing.Point(218, 158);
->>>>>>> parent of 859e09d... added price calc
-=======
-            this.pizzaBox.Location = new System.Drawing.Point(218, 158);
->>>>>>> parent of 859e09d... added price calc
+            this.pizzaBox.Location = new System.Drawing.Point(271, 255);
             this.pizzaBox.Multiline = true;
             this.pizzaBox.Name = "pizzaBox";
             this.pizzaBox.Size = new System.Drawing.Size(200, 157);
             this.pizzaBox.TabIndex = 11;
             // 
-<<<<<<< HEAD
-=======
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 162);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Details:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(215, 142);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Order Summary:";
-            // 
->>>>>>> parent of 859e09d... added price calc
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,19 +282,8 @@
         private System.Windows.Forms.Button detailsButton;
         private System.Windows.Forms.Button orderButton;
         private System.Windows.Forms.Button pizzaButton;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         private System.Windows.Forms.Button deleteButton;
-=======
-=======
->>>>>>> parent of 859e09d... added price calc
-=======
->>>>>>> parent of 859e09d... added price calc
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
->>>>>>> parent of 859e09d... added price calc
     }
 	}
 
