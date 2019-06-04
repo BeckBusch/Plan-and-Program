@@ -13,12 +13,16 @@ namespace Plan_and_Program {
 	public partial class Form1: Form { 
         //create dictionary for order. string is name of item, decimal is quantity
         Dictionary<string, decimal> order = new Dictionary<string, decimal>();
+
         //array to store customer details. only 4 values so array used instead of dict
         string[] details = new string[4];
+
         //path variable to point to save file
         string path = @"C:\Users\beckb\source\repos\Plan and Program\";
+
         //integer for saving total cost of order
         decimal price = 0;
+
         //dictionary to hold all costs
         Dictionary<string, decimal> prices = new Dictionary<string, decimal>() {
             {"Cheese", 2.5m},
@@ -31,11 +35,13 @@ namespace Plan_and_Program {
             {"Fries", 2.5m},
             {"Large Drink", 2.5m}
         };
+
         private void PizzaUpdate()
         {
             pizzaBox.Clear();
             price = 0;
             File.WriteAllText(path + "PizzaOrder.txt", "Last Order:\r\n");
+
             foreach (KeyValuePair<string, decimal> entry in order)
             {
                 if (entry.Value != 0)
@@ -46,13 +52,14 @@ namespace Plan_and_Program {
                     price += prices[entry.Key] * entry.Value;
                 }
             }
+
             if (details[3] == "True")
             {
                 pizzaBox.Text += "--------\r\nDelivery Cost: $4.50\r\n";
                 price += 4.50m;
             }
-            pizzaBox.Text += "Total Cost: $" + price.ToString();
 
+            pizzaBox.Text += "Total Cost: $" + price.ToString();
         }
 
         public Form1() {
@@ -62,9 +69,11 @@ namespace Plan_and_Program {
             detailsBox.Text = File.ReadAllText(path + "Details.txt");
             pizzaBox.Text = File.ReadAllText(path + "PizzaOrder.txt");
 			}
+
         private void PizzaButton_Click(object sender, EventArgs e)
         {
             decimal tmp = 0;
+
             if(order.TryGetValue(pizzaChoice.Text, out tmp)) {
                 order[pizzaChoice.Text] = pizzaCombo.Value;
             }
@@ -72,8 +81,10 @@ namespace Plan_and_Program {
             {
                 order.Add(pizzaChoice.Text, pizzaCombo.Value);
             }
+
             pizzaBox.Clear();
             File.WriteAllText(path + "PizzaOrder.txt", "Last Order:\r\n");
+
             foreach (KeyValuePair<string, decimal> entry in order)
             {
                 if(entry.Value != 0) {
@@ -81,7 +92,6 @@ namespace Plan_and_Program {
                     File.AppendAllText(path + "PizzaOrder.txt", (entry.Key + ": x" + entry.Value.ToString() + "\r\n"));
                 }
             }
-
         }
 
         private void OrderButton_Click(object sender, EventArgs e)
@@ -102,6 +112,7 @@ namespace Plan_and_Program {
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             decimal tmp = 0;
+
             if (order.TryGetValue(pizzaChoice.Text, out tmp))
             {
                 order[pizzaChoice.Text] = 0;
