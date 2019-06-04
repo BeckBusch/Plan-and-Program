@@ -8,18 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using MaterialSkin;
-using MaterialSkin.Controls;
 
 namespace Plan_and_Program {
-	public partial class Form1: MaterialForm {
+	public partial class Form1: Form { 
         //create dictionary for order. string is name of item, decimal is quantity
         Dictionary<string, decimal> order = new Dictionary<string, decimal>();
         //array to store customer details. only 4 values so array used instead of dict
         string[] details = new string[4];
         //path variable to point to save file
         string path = @"C:\Users\beckb\source\repos\Plan and Program\";
-<<<<<<< HEAD
         //integer for saving total cost of order
         decimal price = 0;
         //dictionary to hold all costs
@@ -59,12 +56,8 @@ namespace Plan_and_Program {
         }
 
         public Form1() {
-=======
-		public Form1() {
->>>>>>> parent of 859e09d... added price calc
 			InitializeComponent();
           
-         
             //Fills out text boxes with data from files
             detailsBox.Text = File.ReadAllText(path + "Details.txt");
             pizzaBox.Text = File.ReadAllText(path + "PizzaOrder.txt");
@@ -105,7 +98,6 @@ namespace Plan_and_Program {
             detailsBox.Lines = details;
             File.WriteAllLines(path + "Details.txt", details);
         }
-<<<<<<< HEAD
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
@@ -117,7 +109,5 @@ namespace Plan_and_Program {
             PizzaUpdate();
         }
        
-=======
->>>>>>> parent of 859e09d... added price calc
     }
 	}

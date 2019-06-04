@@ -236,7 +236,11 @@
             this.pizzaBox.BackColor = System.Drawing.Color.White;
             this.pizzaBox.Enabled = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.pizzaBox.Location = new System.Drawing.Point(256, 239);
+=======
+            this.pizzaBox.Location = new System.Drawing.Point(218, 158);
+>>>>>>> parent of 859e09d... added price calc
 =======
             this.pizzaBox.Location = new System.Drawing.Point(218, 158);
 >>>>>>> parent of 859e09d... added price calc
@@ -308,8 +312,11 @@
         private System.Windows.Forms.Button orderButton;
         private System.Windows.Forms.Button pizzaButton;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.Button deleteButton;
 =======
+=======
+>>>>>>> parent of 859e09d... added price calc
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
