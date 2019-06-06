@@ -76,6 +76,7 @@
             // 
             // nameBox
             // 
+            this.nameBox.BackColor = System.Drawing.SystemColors.Window;
             this.nameBox.Location = new System.Drawing.Point(93, 13);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(100, 20);
@@ -140,7 +141,7 @@
             this.detailsBox.Location = new System.Drawing.Point(12, 165);
             this.detailsBox.Multiline = true;
             this.detailsBox.Name = "detailsBox";
-            this.detailsBox.Size = new System.Drawing.Size(200, 137);
+            this.detailsBox.Size = new System.Drawing.Size(200, 149);
             this.detailsBox.TabIndex = 5;
             // 
             // pizzaChoice
@@ -210,6 +211,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Delete Item";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // orderButton
             // 
@@ -238,18 +240,20 @@
             this.pizzaBox.Location = new System.Drawing.Point(218, 145);
             this.pizzaBox.Multiline = true;
             this.pizzaBox.Name = "pizzaBox";
-            this.pizzaBox.Size = new System.Drawing.Size(200, 157);
+            this.pizzaBox.Size = new System.Drawing.Size(200, 169);
             this.pizzaBox.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 438);
+            this.ClientSize = new System.Drawing.Size(426, 323);
             this.Controls.Add(this.pizzaBox);
             this.Controls.Add(this.Order);
             this.Controls.Add(this.detailsBox);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Pizza Order";
             this.groupBox1.ResumeLayout(false);

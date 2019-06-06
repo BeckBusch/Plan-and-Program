@@ -1,6 +1,6 @@
-Beck Bsuch
-192837465
-114 clifee lvie dr
-gerrns
-auckladn
-True
+Name: Beck Busch
+Phone Number: 34897254
+Address: 92 greeb bay st
+green bay
+auckland
+Delivery: True
