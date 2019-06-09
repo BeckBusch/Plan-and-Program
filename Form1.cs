@@ -30,7 +30,7 @@ namespace Plan_and_Program
 		public static string[] details = new string[4];
 
 		// Path variable to point to save file
-		public static string path = @"C:\Users\beckb\source\repos\Plan and Program\";
+		public static string path = Directory.GetCurrentDirectory() + @"\";
 
 		// Integer for saving total cost of order
 		public static decimal price = 0;
@@ -132,12 +132,18 @@ namespace Plan_and_Program
 				}
 			}
 
+			// Adds a cosmetic divider line
+			pizzaBox.Text += "--------\r\n";
+
 			// If the user has asked for delivery, add $4.50 to the price total and add a line to the summary mentioning the delivery.
 			if (details[3] == "Delivery: True")
 			{
 				pizzaBox.Text += "Delivery Cost: $4.50\r\n";
 				price += 4.50m;
 			}
+
+			// Add a line summarising the total cost.
+			pizzaBox.Text += "Total Cost: $" + price.ToString();
 		}
 
 		// Main method to initialise and start the form
@@ -168,31 +174,39 @@ namespace Plan_and_Program
 			PizzaUpdate();
 		}
 
-		private void OrderButton_Click(object sender, EventArgs e)
-		{
-		
-		}
-
 		private void DetailsButton_Click(object sender, EventArgs e)
 		{
+			// Runs the input check method on the name entry box and the phone number entry box.
+			// The method will run entry validation and the result will be saved to the details array.
 			details[0] = InputCheck(nameBox, "name");
 			details[1] = InputCheck(phoneBox, "phone");
 
+			// The method is run for the address but it will always return true. This code gives me the option to add validation of address in the future.
 			details[2] = InputCheck(addressBox, "address");
+			// Devliery choice is added directly to the array because the boolean nature prevents an incorrect input.
 			details[3] = "Delivery: " + deliveryBox.Checked.ToString();
 
+			// Print out the contents of the details array to the text box to display information to the user.
 			detailsBox.Lines = details;
+
+			// Save the user details to a text file to be stored for later use.
 			File.WriteAllLines(path + "Details.txt", details);
 		}
 
+		// Method to delete an item from the order
 		private void DeleteButton_Click(object sender, EventArgs e)
 		{
+			// Order items can be removed by setting the quantity to 0, but that is unintuitive. This method provides a delete button.
+			// Creates a temporary variable that is needed for the method I use.
 			decimal tmp = 0;
 
+			// TryGetValue checks an array for a value and returns true or false.
 			if (order.TryGetValue(pizzaChoice.Text, out tmp))
 			{
+				// If TryGetValue returned true, remove that item from the array
 				order[pizzaChoice.Text] = 0;
 			}
+			// Run the update method again to reflect these changes.
 			PizzaUpdate();
 		}
 	}

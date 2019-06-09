@@ -1,6 +1,6 @@
-Name: Beck Busch
-Phone Number: 34897254
-Address: 92 greeb bay st
-green bay
-auckland
+Name: Test Name
+Phone Number: 091234567
+Address: 123 Road St
+Areavil
+Town City
 Delivery: True
